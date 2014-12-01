@@ -1,0 +1,18 @@
+<%
+    // Loop thru the objects in the all-cities.json, and make a table for each one with borders
+    // Set the id for the table to the city name in the current object, spaces removed
+    // Each member of the object will be displayed as "key": "value"
+    // The table will be striped, see main.css (all tables in this app will be striped)
+%>
+
+<% for( var attribute in model.attributes ){ %>
+    <table border="1" id= <%= model.attributes[attribute]['city'].split(" ").join("") %> >
+        <tbody>
+            <% for(var item in model.attributes[attribute]) { %>
+                <tr> <td> <%= item %>: </td> <td> <%=  model.attributes[attribute][item] %> </td> </tr><% } %>
+        </tbody>
+    </table>
+    <br>
+<% } %>
+
+

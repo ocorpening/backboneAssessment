@@ -1,0 +1,17 @@
+<%
+    // Loop thru the key-value pairs in the city .json, and make a table with borders
+    // Each member of the object will be displayed as "key": "value"
+    // The table will be striped, see main.css (all tables in this app will be striped)
+%>
+
+<div>
+    <table border="1">
+        <tbody>
+            <% for( var attribute in model.attributes ){ %>
+                <tr> <td> <%= attribute %>: </td> <td> <%=  model.attributes[attribute] %> </td> </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+
